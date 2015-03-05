@@ -19,7 +19,7 @@
 <Server port='-1'>
 
     <Service name='Catalina'>
-        <Connector port='${http.port}' bindOnInit="false"/>
+        <Connector port='${http.port}' bindOnInit="false" protocol="org.apache.coyote.http11.Http11NioProtocol" SSLEnabled="true" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="keystore" keystorePass="password" />
 
         <Engine defaultHost='localhost' name='Catalina'>
             <Valve className="org.apache.catalina.valves.RemoteIpValve" protocolHeader="x-forwarded-proto"/>
